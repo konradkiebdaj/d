@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Models.User;
+import com.example.demo.Services.UserRepository;
 import com.example.demo.Validators.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,9 +17,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class RegisterController {
 
+    @Autowired
+    private UserRepository userRepository;
+
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public String register(Model model){
-        model.addAttribute("user", new User());
+    public String register(Model model, User user){
+        model.addAttribute("user", user);
+//        userRepository.save(user);
         return "register";
     }
 
@@ -36,7 +41,7 @@ public class RegisterController {
         if (result.hasErrors()){
             return "register";
         }
-
+        userRepository.save(user);
         return "home";
     }
 }

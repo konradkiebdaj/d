@@ -5,8 +5,8 @@ public enum EnumValidator {
     NAME("[a-z A-z]{3,}", "err_code", "Imię jest za krótkie"),
     SURNAME("[a-z A-z]{2,}", "err_code", "Nazwisko jest za krótkie"),
     EMAIL("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$","err_code","To nie jest email"),
-    PASSWORD("[a-z A-z]{5,}", "err_code", "Hasło musi zawierać co najmniej 6 znaków"),
-    CONFIRMPASSWORD("[a-z A-z]{5,}", "err_code", "Hasło musi zawierać co najmniej 6 znaków");
+    PASSWORD("[a-z A-z 0-9]{5,}", "err_code", "Hasło musi zawierać co najmniej 6 znaków"),
+    CONFIRMPASSWORD("[a-z A-z 0-9]{5,}", "err_code", "Hasło musi zawierać co najmniej 6 znaków");
 
     private String pattern;
     private String errCode;

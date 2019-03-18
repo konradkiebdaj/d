@@ -1,22 +1,34 @@
 package com.example.demo.Models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue
     private long id;
+
     private String name;
     private String surname;
     private String email;
     private String password;
     private String confirmPassword;
 
-    public User(String name, String surname, String email, String password, String confirmPassword) {
-        super();
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.password = password;
-        this.confirmPassword = confirmPassword;
+    public User(){
+
     }
+
+//    public User(String name, String surname, String email, String password, String confirmPassword) {
+//        super();
+//        this.name = name;
+//        this.surname = surname;
+//        this.email = email;
+//        this.password = password;
+//        this.confirmPassword = confirmPassword;
+//    }
 
     public long getId() {
         return id;
@@ -64,5 +76,17 @@ public class User {
 
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", confirmPassword='" + confirmPassword + '\'' +
+                '}';
     }
 }
