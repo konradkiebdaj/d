@@ -17,18 +17,18 @@ public class User {
     private String password;
     private String confirmPassword;
 
-    public User(){
+    protected User(){
 
     }
 
-//    public User(String name, String surname, String email, String password, String confirmPassword) {
-//        super();
-//        this.name = name;
+    public User(String name) {
+        super();
+        this.name = name;
 //        this.surname = surname;
 //        this.email = email;
 //        this.password = password;
 //        this.confirmPassword = confirmPassword;
-//    }
+    }
 
     public long getId() {
         return id;

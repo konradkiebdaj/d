@@ -22,8 +22,8 @@ public class RegisterController {
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String register(Model model, User user){
-        model.addAttribute("user", user);
-//        userRepository.save(user);
+        model.addAttribute("user", new User("Jill"));
+        userRepository.save(user);
         return "register";
     }
 
